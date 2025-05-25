@@ -116,15 +116,28 @@ Pembagian dilakukan secara **stratified** berdasarkan `target` agar proporsi kel
   - `min_samples_split = 2`
   
 ## Evaluation
+## Evaluation
 
-- **Accuracy:** Persentase prediksi benar dari total data.  
-- **Precision:**  
-  $$ \text{Precision} = \frac{TP}{TP + FP} $$
-- **Recall:**  
-  $$ \text{Recall} = \frac{TP}{TP + FN} $$
-- **F1-score:**  
-  $$ F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} $$
-- **Confusion Matrix:** Matriks prediksi benar dan salah tiap kelas.
+**Accuracy:**  
+Persentase prediksi benar dari total data.
+
+**Precision:**  
+$$
+\text{Precision} = \frac{TP}{TP + FP}
+$$
+
+**Recall:**  
+$$
+\text{Recall} = \frac{TP}{TP + FN}
+$$
+
+**F1-score:**  
+$$
+F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+$$
+
+**Confusion Matrix:**  
+Matriks yang menunjukkan jumlah prediksi benar dan salah untuk tiap kelas.
 
 ### Hasil Evaluasi
 
