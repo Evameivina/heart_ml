@@ -78,7 +78,6 @@ Data dibagi menjadi:
 - **20% data uji (test set)**  
 Pembagian dilakukan secara **stratified** berdasarkan `target` agar proporsi kelas tetap seimbang.
 
----
 
 ## Modeling
 
