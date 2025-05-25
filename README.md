@@ -115,31 +115,20 @@ Pembagian dilakukan secara **stratified** berdasarkan `target` agar proporsi kel
   - `max_depth = 10`
   - `min_samples_split = 2`
   
-## Evaluation## Evaluation
-
-**Accuracy:**  
+## EvaluationAccuracy
 Persentase prediksi yang benar dari seluruh data.
 
-**Precision:**  
-Rasio prediksi positif yang benar:  
-$$
-\text{Precision} = \frac{TP}{TP + FP}
-$$
+**Precision**
+Proporsi prediksi positif yang benar, dihitung dari jumlah True Positive dibagi dengan jumlah True Positive ditambah False Positive.
 
-**Recall:**  
-Rasio kasus positif yang berhasil terdeteksi:  
-$$
-\text{Recall} = \frac{TP}{TP + FN}
-$$
+**Recall**
+Proporsi kasus positif yang berhasil dideteksi, dihitung dari jumlah True Positive dibagi dengan jumlah True Positive ditambah False Negative.
 
-**F1-score:**  
-Harmonik rata-rata precision dan recall:  
-$$
-F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
-$$
+**F1-score**
+Nilai rata-rata harmonis dari precision dan recall, yang menunjukkan keseimbangan antara keduanya.
 
-**Confusion Matrix:**  
-Matriks yang menampilkan jumlah prediksi benar dan salah untuk masing-masing kelas.
+**Confusion Matrix**
+Tabel yang menunjukkan jumlah prediksi benar dan salah untuk setiap kelas.
 
 ### Hasil Evaluasi
 
