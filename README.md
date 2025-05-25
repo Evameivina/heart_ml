@@ -114,41 +114,17 @@ Pembagian dilakukan secara **stratified** berdasarkan `target` agar proporsi kel
   - `n_estimators = 150`
   - `max_depth = 10`
   - `min_samples_split = 2`
-    
-## Evaluation
-### Metrik yang digunakan:
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion Matrix
-
-**Penjelasan metrik:**
-- `Precision = TP / (TP + FP)`
-- `Recall = TP / (TP + FN)`
-- `F1-score = 2 * (Precision * Recall) / (Precision + Recall)`
   
 ## Evaluation
 
-### Metrik yang Digunakan
-- **Accuracy:** Persentase prediksi benar dari total data.
-- **Precision:** Proporsi prediksi positif yang benar.  
-  Rumus:  
-  \[
-  \text{Precision} = \frac{TP}{TP + FP}
-  \]
-- **Recall:** Proporsi kasus positif yang berhasil dideteksi.  
-  Rumus:  
-  \[
-  \text{Recall} = \frac{TP}{TP + FN}
-  \]
-- **F1-score:** Harmonik rata-rata precision dan recall, menyeimbangkan keduanya.  
-  Rumus:  
-  \[
-  \text{F1-score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
-  \]
-- **Confusion Matrix:** Matriks yang menunjukkan jumlah prediksi benar dan salah untuk setiap kelas.
-
+- **Accuracy:** Persentase prediksi benar dari total data.  
+- **Precision:**  
+  $$ \text{Precision} = \frac{TP}{TP + FP} $$
+- **Recall:**  
+  $$ \text{Recall} = \frac{TP}{TP + FN} $$
+- **F1-score:**  
+  $$ F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} $$
+- **Confusion Matrix:** Matriks prediksi benar dan salah tiap kelas.
 
 ### Hasil Evaluasi
 
