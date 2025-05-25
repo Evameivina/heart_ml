@@ -115,7 +115,9 @@ Pembagian dilakukan secara **stratified** berdasarkan `target` agar proporsi kel
   - `max_depth = 10`
   - `min_samples_split = 2`
   
-## EvaluationAccuracy
+## Evaluation
+
+**Accuracy**
 Persentase prediksi yang benar dari seluruh data.
 
 **Precision**
