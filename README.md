@@ -50,10 +50,31 @@ Membangun model machine learning yang mampu mengklasifikasi risiko penyakit jant
 
 ## Data Preparation
 
-1. Memisahkan fitur (`X`) dan target (`y`).  
-2. Mengubah fitur kategorikal dengan one-hot encoding.  
-3. Melakukan standardisasi fitur numerik menggunakan StandardScaler.  
-4. Membagi data menjadi data latih (80%) dan data uji (20%) secara stratified.
+Tahap persiapan data ini bertujuan agar dataset siap dan optimal untuk digunakan dalam pelatihan model machine learning. Proses yang dilakukan adalah sebagai berikut:
+
+### 1. Memisahkan Fitur dan Target
+
+Pertama, data dipisahkan menjadi fitur (variabel input) dan target (variabel yang ingin diprediksi). Hal ini penting agar model dapat belajar hanya dari fitur tanpa melihat nilai target secara langsung, sehingga proses pelatihan menjadi lebih tepat.
+
+### 2. Mengidentifikasi Tipe Fitur: Numerik dan Kategorikal
+
+Dataset terdiri dari dua tipe fitur, yaitu numerik (berupa angka) dan kategorikal (berupa kategori). Perbedaan tipe ini menentukan bagaimana data tersebut akan diproses selanjutnya, karena masing-masing memerlukan metode transformasi yang berbeda.
+
+### 3. Menentukan Metode Preprocessing yang Tepat untuk Masing-Masing Tipe Fitur
+
+Fitur numerik distandarisasi menggunakan metode standardisasi agar semua fitur memiliki skala yang seragam dengan rata-rata nol dan standar deviasi satu. Ini penting agar model tidak bias terhadap fitur dengan skala besar. Sedangkan fitur kategorikal diubah menjadi bentuk numerik melalui teknik one-hot encoding, yang mengonversi setiap kategori menjadi variabel biner agar dapat diproses model.
+
+### 4. Menggabungkan Preprocessing dengan Pendekatan Terstruktur
+
+Transformasi untuk fitur numerik dan kategorikal digabungkan menggunakan metode yang memungkinkan penerapan berbeda pada masing-masing tipe fitur secara bersamaan dan efisien. Pendekatan ini membuat pipeline preprocessing menjadi terstruktur dan mudah digunakan.
+
+### 5. Membagi Dataset Menjadi Data Latih dan Data Uji dengan Stratifikasi
+
+Dataset kemudian dibagi menjadi dua bagian, yaitu data latih sebanyak 80% dan data uji sebanyak 20%. Pembagian ini menggunakan teknik stratifikasi berdasarkan target agar proporsi kelas di kedua subset tetap seimbang. Hal ini penting untuk mencegah bias model terhadap kelas tertentu dan memastikan evaluasi model yang lebih akurat.
+
+### 6. Menerapkan Preprocessing ke Data Latih dan Data Uji
+
+Proses preprocessing diterapkan pada data latih dengan cara mempelajari parameter transformasi dari data tersebut, lalu transformasi diterapkan. Pada data uji, hanya dilakukan transformasi berdasarkan parameter yang sudah dipelajari dari data latih agar model dapat diuji secara objektif tanpa kebocoran informasi dari data uji.
 
 ## Modeling
 
