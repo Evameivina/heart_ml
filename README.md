@@ -57,15 +57,78 @@ Membangun model machine learning yang mampu mengklasifikasi risiko penyakit jant
 
 ## Modeling
 
-### Algoritma yang Digunakan  
-- Logistic Regression (Baseline)  
-- Random Forest Classifier (Default)  
-- Random Forest dengan Hyperparameter Tuning (GridSearchCV)
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan prediksi penyakit jantung. Beberapa algoritma klasifikasi diuji dan dibandingkan untuk memperoleh model terbaik berdasarkan performa.
 
-### Penjelasan Model  
-- **Logistic Regression:** Model linier sederhana, cepat, mudah diinterpretasi.  
-- **Random Forest:** Model ansambel yang kuat, bisa menangkap hubungan non-linear antar fitur.  
-- **Tuning Random Forest:** Mencari parameter terbaik untuk meningkatkan performa.
+Model yang digunakan:
+1. Logistic Regression (Baseline)
+2. Random Forest Classifier (Default)
+3. Random Forest Classifier (Hyperparameter Tuning)
+
+### Model 1: Logistic Regression (Baseline)
+
+#### Cara Kerja
+Logistic Regression adalah model klasifikasi linier yang memprediksi probabilitas suatu kelas menggunakan fungsi sigmoid. Model ini menghitung kemungkinan suatu input termasuk ke dalam kelas 1 (positif) berdasarkan kombinasi linier dari fitur input.
+
+#### Parameter
+- `random_state=42`: Menjamin replikasi hasil.
+- `max_iter=1000`: Menambah jumlah iterasi agar model lebih stabil.
+- Parameter lainnya menggunakan nilai default.
+
+#### Kelebihan
+- Cepat dan efisien pada dataset berukuran kecil-menengah.
+- Mudah diinterpretasi dan digunakan sebagai baseline.
+
+#### Kekurangan
+- Tidak mampu menangani hubungan non-linear antar fitur.
+- Cenderung memiliki akurasi lebih rendah jika fitur saling kompleks.
+
+### Model 2: Random Forest Classifier (Default)
+
+#### Cara Kerja
+Random Forest adalah algoritma _ensemble_ berbasis decision tree. Model ini membangun banyak pohon keputusan dan menggabungkan hasilnya melalui voting. Dengan pendekatan bootstrap dan random feature selection, model ini cenderung lebih tahan terhadap overfitting.
+
+#### Parameter
+- `random_state=42`: Menjamin hasil konsisten.
+- Parameter lainnya default:
+  - `n_estimators=100`
+  - `max_depth=None`
+  - `min_samples_split=2`
+
+#### Kelebihan
+- Mampu menangani fitur non-linear dan interaksi antar fitur.
+- Tahan terhadap overfitting dan outlier.
+- Tidak memerlukan normalisasi data.
+
+#### Kekurangan
+- Kurang interpretatif dibanding Logistic Regression.
+- Performa masih bisa ditingkatkan dengan tuning parameter.
+
+### Model 3: Random Forest Classifier (Tuned)
+
+#### Cara Kerja
+Random Forest dioptimalkan melalui pencarian hyperparameter menggunakan `GridSearchCV`. Teknik ini melakukan pencarian grid pada kombinasi parameter terbaik berdasarkan kinerja validasi silang (cross-validation) dan metrik F1-score.
+
+#### Parameter Tuning
+- `n_estimators`: [100, 200]
+- `max_depth`: [None, 10, 20]
+- `min_samples_split`: [2, 5]
+- `cv=5`, `scoring='f1'`, `n_jobs=-1`
+
+#### Kelebihan
+- Memberikan hasil lebih optimal dibanding versi default.
+- Mengurangi risiko overfitting/underfitting.
+- Meningkatkan akurasi dan stabilitas model.
+
+#### Kekurangan
+- Proses pelatihan lebih lama karena banyak kombinasi parameter yang diuji.
+
+### Pemilihan Model Terbaik
+
+Berdasarkan evaluasi performa menggunakan metrik F1-score dan validasi silang, **Random Forest Classifier dengan Hyperparameter Tuning** dipilih sebagai **model terbaik**. Model ini menunjukkan keseimbangan yang baik antara akurasi, generalisasi, dan kemampuan menangani data yang kompleks.
+
+Alasan memilih model ini:
+- Memiliki performa lebih tinggi dibanding model baseline dan versi default.
+- Menghasilkan prediksi yang lebih stabil dan presisi untuk kasus klasifikasi biner seperti penyakit jantung.
 
 ## Evaluation
 
