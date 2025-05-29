@@ -26,27 +26,58 @@ Membangun model machine learning yang mampu mengklasifikasi risiko penyakit jant
 
 ## Data Understanding
 
-**Sumber Dataset:**  
-[heart.csv](https://raw.githubusercontent.com/Evameivina/heart_ml/refs/heads/main/heart.csv)
+### Sumber Dataset
+Dataset yang digunakan adalah `heart.csv`, yang berisi informasi kesehatan pasien dan label apakah pasien menderita penyakit jantung atau tidak.
 
-**Ukuran Dataset:**  
-- Jumlah Data: 918 baris  
-- Fitur: 11 fitur + 1 target (HeartDisease)  
-- Tidak ada nilai yang hilang
+---
 
-**Distribusi Target:**  
-- Positif (1): 55.3%  
-- Negatif (0): 44.7%  
+### Ukuran Dataset
+- **Jumlah baris (data)**: 918
+- **Jumlah kolom (fitur)**: 11 fitur input + 1 fitur target (`HeartDisease`)
+- **Missing Value**: Tidak ada
+- **Duplikat**: Tidak ditemukan
 
-**Contoh 5 Data Teratas:**
+---
 
-| Age | Sex | ChestPainType | RestingBP | Cholesterol | FastingBS | RestingECG | MaxHR | ExerciseAngina | Oldpeak | ST_Slope | HeartDisease |
-|------|-----|--------------|-----------|-------------|-----------|------------|-------|---------------|---------|----------|--------------|
-| 40   | M   | ATA          | 140       | 289         | 0         | Normal     | 172   | N             | 0.0     | Up       | 0            |
-| 49   | F   | NAP          | 160       | 180         | 0         | Normal     | 156   | N             | 1.0     | Flat     | 1            |
-| 37   | M   | ATA          | 130       | 283         | 0         | ST         | 98    | N             | 0.0     | Up       | 0            |
-| 48   | F   | ASY          | 138       | 214         | 0         | Normal     | 108   | Y             | 1.5     | Flat     | 1            |
-| 54   | M   | NAP          | 150       | 195         | 0         | Normal     | 122   | N             | 0.0     | Up       | 0            |
+### Distribusi Target (`HeartDisease`)
+- `1` → Mengidap penyakit jantung: **55.3%**
+- `0` → Tidak mengidap penyakit jantung: **44.7%**
+
+---
+
+### Deskripsi Setiap Fitur
+
+| Fitur              | Tipe           | Deskripsi                                                                 |
+|-------------------|----------------|--------------------------------------------------------------------------|
+| **Age**           | Numerik        | Usia pasien dalam tahun                                                  |
+| **Sex**           | Kategorikal    | Jenis kelamin pasien:<br>`M` = Male (Laki-laki), `F` = Female (Perempuan) |
+| **ChestPainType** | Kategorikal    | Jenis nyeri dada:<br>• `TA` = Typical Angina<br>• `ATA` = Atypical Angina<br>• `NAP` = Non-Anginal Pain<br>• `ASY` = Asymptomatic |
+| **RestingBP**     | Numerik        | Tekanan darah saat istirahat (mmHg)                                      |
+| **Cholesterol**   | Numerik        | Kadar kolesterol serum (mg/dl)                                           |
+| **FastingBS**     | Kategorikal    | Gula darah puasa > 120 mg/dl:<br>`1` = Ya, `0` = Tidak                   |
+| **RestingECG**    | Kategorikal    | Hasil elektrokardiografi:<br>• `Normal`<br>• `ST` = Kelainan gelombang ST-T<br>• `LVH` = Kemungkinan hipertrofi ventrikel kiri |
+| **MaxHR**         | Numerik        | Detak jantung maksimum saat uji tekanan (bpm)                            |
+| **ExerciseAngina**| Kategorikal    | Nyeri dada saat olahraga:<br>`Y` = Ya, `N` = Tidak                       |
+| **Oldpeak**       | Numerik        | Depresi ST relatif terhadap baseline akibat olahraga (dalam mm)         |
+| **ST_Slope**      | Kategorikal    | Kemiringan segmen ST saat puncak:<br>• `Up` = Meningkat<br>• `Flat` = Datar<br>• `Down` = Menurun |
+| **HeartDisease**  | Target (0/1)   | Label target:<br>`1` = Mengidap penyakit jantung<br>`0` = Tidak          |
+
+---
+
+### Tujuan Data Understanding
+- Memahami struktur dan isi dataset secara menyeluruh
+- Menilai kualitas data (misal: missing value, outlier, atau duplikasi)
+- Memberikan makna dari masing-masing fitur (baik kategorikal maupun numerik)
+- Memberi konteks bagi pembaca sebelum eksplorasi dan analisis data
+- Menyiapkan dasar yang kuat untuk proses preprocessing dan modeling
+
+---
+
+### Temuan Awal
+- Dataset bersih dan siap diproses lebih lanjut
+- Tidak terdapat missing value atau duplikasi
+- Perlu encoding untuk fitur kategorikal sebelum modeling
+- Target cukup seimbang dan cocok untuk klasifikasi biner
 
 ## Data Preparation
 
