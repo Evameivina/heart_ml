@@ -27,9 +27,7 @@ Membangun model machine learning yang mampu mengklasifikasi risiko penyakit jant
 ## Data Understanding
 
 ### Sumber Dataset
-Dataset yang digunakan adalah `heart.csv`, yang berisi informasi kesehatan pasien dan label apakah pasien menderita penyakit jantung atau tidak.
-
----
+Dataset yang digunakan adalah [heart.csv](https://raw.githubusercontent.com/Evameivina/heart_ml/refs/heads/main/heart.csv) , yang berisi informasi kesehatan pasien dan label apakah pasien menderita penyakit jantung atau tidak.
 
 ### Ukuran Dataset
 - **Jumlah baris (data)**: 918
@@ -37,13 +35,9 @@ Dataset yang digunakan adalah `heart.csv`, yang berisi informasi kesehatan pasie
 - **Missing Value**: Tidak ada
 - **Duplikat**: Tidak ditemukan
 
----
-
 ### Distribusi Target (`HeartDisease`)
 - `1` → Mengidap penyakit jantung: **55.3%**
 - `0` → Tidak mengidap penyakit jantung: **44.7%**
-
----
 
 ### Deskripsi Setiap Fitur
 
@@ -62,16 +56,12 @@ Dataset yang digunakan adalah `heart.csv`, yang berisi informasi kesehatan pasie
 | **ST_Slope**      | Kategorikal    | Kemiringan segmen ST saat puncak:<br>• `Up` = Meningkat<br>• `Flat` = Datar<br>• `Down` = Menurun |
 | **HeartDisease**  | Target (0/1)   | Label target:<br>`1` = Mengidap penyakit jantung<br>`0` = Tidak          |
 
----
-
 ### Tujuan Data Understanding
 - Memahami struktur dan isi dataset secara menyeluruh
 - Menilai kualitas data (misal: missing value, outlier, atau duplikasi)
 - Memberikan makna dari masing-masing fitur (baik kategorikal maupun numerik)
 - Memberi konteks bagi pembaca sebelum eksplorasi dan analisis data
 - Menyiapkan dasar yang kuat untuk proses preprocessing dan modeling
-
----
 
 ### Temuan Awal
 - Dataset bersih dan siap diproses lebih lanjut
